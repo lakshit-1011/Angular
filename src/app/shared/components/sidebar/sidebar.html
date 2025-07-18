@@ -1,0 +1,14 @@
+<div class="sidebar">
+  <ul class="menu">
+    <li [class.active]="isActive('/dashboard')">
+      <a [routerLink]="['/dashboard']">
+        <i class="fa-solid fa-house"></i><span>Dashboard</span>
+      </a>
+    </li>
+    <li [class.active]="isActive('/UserManagent')">
+      <a [routerLink]="['/UserManagent']">
+        <i class="fa-solid fa-envelope"></i><span>User Management</span>
+      </a>
+    </li>
+  </ul>
+</div>

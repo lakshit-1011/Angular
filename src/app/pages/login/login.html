@@ -1,0 +1,20 @@
+<form>
+  <div class="left">
+    <div>
+      <p>Hello, Welcome!</p>
+      <a href="">Log In to your Account</a>
+    </div>
+  </div>
+
+  <div class="right">
+    <div>
+      <h1>Login</h1>
+
+      <input  [(ngModel)]="loginInfo.emailId" type="text" name="Username"  placeholder="Username" />
+
+      <input [(ngModel)]="loginInfo.password" type="password" name="Password"  placeholder="Password" />
+
+      <button (click)="handleClick()" type="submit">Login</button>
+    </div>
+  </div>
+</form>
