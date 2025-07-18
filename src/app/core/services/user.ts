@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
-import { User } from '../models/userInterface';
+import { User } from '../models/Api_Model';
 import { users as dummyUsers } from '../constants/constant';
 
 @Injectable({

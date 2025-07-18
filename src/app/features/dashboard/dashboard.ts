@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 
 import { CommonModule } from '@angular/common';
 import { UserService } from '../../core/services/user';
-import { User } from '../../core/models/userInterface';
+import { User } from '../../core/models/Api_Model';
 
 @Component({
   selector: 'app-dashboard',

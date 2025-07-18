@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
-import { User } from '../../../core/models/userInterface';
+import { User } from '../../../core/models/Api_Model';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 
