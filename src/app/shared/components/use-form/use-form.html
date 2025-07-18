@@ -1,0 +1,8 @@
+  <form (ngSubmit)="onSubmit($event)">
+    <input [(ngModel)]="currentUser.name" name="name" placeholder="Name" required />
+    <input [(ngModel)]="currentUser.email" name="email" placeholder="Email" required />
+    <input [(ngModel)]="currentUser.role" name="role" placeholder="Role" required />
+    <input [(ngModel)]="currentUser.gender" name="gender" placeholder="Gender" required />
+    <button type="submit">{{ isEdit ? 'Update' : 'Add' }} User</button>
+    <button type="button" (click)="onClear()">Clear</button>
+  </form>

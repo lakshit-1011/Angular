@@ -1,18 +1,21 @@
 <div class="container">
   <h2>User Management</h2>
 
-  <form (submit)="saveUser()">
-    <input [(ngModel)]="currentUser.name" name="name" placeholder="Name" required />
-    <input [(ngModel)]="currentUser.email" name="email" placeholder="Email" required />
-    <input [(ngModel)]="currentUser.role" name="role" placeholder="Role" required />
-    <input [(ngModel)]="currentUser.gender" name="gender" placeholder="Gender" required />
-    <button type="submit">{{ isEdit ? 'Update' : 'Add' }} User</button>
-    <button type="button" (click)="resetForm()">Clear</button>
-  </form>
+  <app-use-form
+    [currentUser]="currentUser"
+    [isEdit]="isEdit"
+    (save)="saveUser($event)"
+    (reset)="resetForm()"
+  ></app-use-form>
 
   <table>
     <thead>
-      <tr><th>Name</th><th>Email</th><th>Role</th><th>Actions</th></tr>
+      <tr>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Role</th>
+        <th>Actions</th>
+      </tr>
     </thead>
     <tbody>
       <tr *ngFor="let user of users">

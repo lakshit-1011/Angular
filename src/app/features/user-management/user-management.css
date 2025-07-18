@@ -14,50 +14,6 @@ h2 {
   color: #333;
 }
 
-form {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  margin-bottom: 25px;
-  justify-content: space-between;
-}
-
-form input {
-  flex: 1 1 calc(33% - 10px);
-  padding: 10px;
-  font-size: 14px;
-  border: 1px solid #ccc;
-  border-radius: 6px;
-  transition: border-color 0.3s;
-}
-
-form input:focus {
-  border-color: #007bff;
-  outline: none;
-}
-
-form button {
-  padding: 10px 16px;
-  font-size: 14px;
-  border: none;
-  border-radius: 6px;
-  cursor: pointer;
-  background-color: #007bff;
-  color: white;
-  transition: background-color 0.2s ease-in-out;
-}
-
-form button[type="button"] {
-  background-color: #6c757d;
-}
-
-form button:hover {
-  background-color: #0056b3;
-}
-
-form button[type="button"]:hover {
-  background-color: #5a6268;
-}
 
 table {
   width: 100%;

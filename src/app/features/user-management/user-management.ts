@@ -3,10 +3,11 @@ import { User } from '../../core/models/Api_Model';
 import { UserService } from '../../core/services/user';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
+import { UseForm } from '../../shared/components/use-form/use-form';
 
 @Component({
   selector: 'app-user-management',
-  imports: [FormsModule,CommonModule],
+  imports: [FormsModule,CommonModule,UseForm],
   templateUrl: './user-management.html',
   styleUrl: './user-management.css'
 })
@@ -25,14 +26,14 @@ export class UserManagement {
     this.userService.getUsers().subscribe(users => this.users = users);
   }
 
-  saveUser() {
+  saveUser(user:User) {
     if (this.isEdit) {
-      this.userService.updateUser(this.currentUser).subscribe(users => {
+      this.userService.updateUser(user).subscribe(users => {
         this.users = users;
         this.resetForm();
       });
     } else {
-      this.userService.addUser(this.currentUser).subscribe(users => {
+      this.userService.addUser(user).subscribe(users => {
         this.users = users;
         this.resetForm();
       });
