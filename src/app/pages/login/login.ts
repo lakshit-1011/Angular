@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import {  LoginDetails } from '../../core/models/Api_Model';
+// import {  LoginDetails } from '../../core/models/userInterface';
 import { FormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
 
@@ -10,7 +10,7 @@ import { Router } from '@angular/router';
   styleUrl: './login.css',
 })
 export class Login {
-  loginInfo = new LoginDetails();
+  // loginInfo = new LoginDetails();
   constructor(private router: Router) {}
   handleClick() {
     // this.employeeService.login(this.loginInfo).subscribe(
@@ -27,12 +27,12 @@ export class Login {
     //     console.error('Login error:', error);
     //     alert('Something went wrong while logging in.');
     //   }
-    // );
-     if(this.loginInfo.emailId==='' || this.loginInfo.password===''){
-       alert("fill the correct details");
-     }else{
-     localStorage.setItem('ticketData', JSON.stringify(this.loginInfo));
-     this.router.navigateByUrl('/dashboard');
-     }
+    // // );
+    //  if(this.loginInfo.emailId==='' || this.loginInfo.password===''){
+    //    alert("fill the correct details");
+    //  }else{
+    //  localStorage.setItem('ticketData', JSON.stringify(this.loginInfo));
+    //  this.router.navigateByUrl('/dashboard');
+    //  }
   }
 }

@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { User } from '../../core/models/Api_Model';
+import { User } from '../../core/models/userInterface';
 import { UserService } from '../../core/services/user';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
