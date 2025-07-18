@@ -7,13 +7,13 @@ import { UseForm } from '../../shared/components/use-form/use-form';
 
 @Component({
   selector: 'app-user-management',
-  imports: [FormsModule,CommonModule,UseForm],
+  imports: [FormsModule, CommonModule, UseForm],
   templateUrl: './user-management.html',
-  styleUrl: './user-management.css'
+  styleUrl: './user-management.css',
 })
 export class UserManagement {
   users: User[] = [];
-  currentUser: User = { id: 0, name: '', email: '', role: '' ,gender:''};
+  currentUser: User = { id: 0, name: '', email: '', role: '', gender: '' };
   isEdit = false;
 
   constructor(private userService: UserService) {}
@@ -23,17 +23,21 @@ export class UserManagement {
   }
 
   fetchUsers() {
-    this.userService.getUsers().subscribe(users => this.users = users);
+    this.userService.getUsers().subscribe((users) => (this.users = users));
   }
 
-  saveUser(user:User) {
+  saveUser(user: User) {
+    if (!user.name || !user.email || !user.role || !user.gender) {
+      alert('Please fill in all the required fields!');
+      return;
+    }
     if (this.isEdit) {
-      this.userService.updateUser(user).subscribe(users => {
+      this.userService.updateUser(user).subscribe((users) => {
         this.users = users;
         this.resetForm();
       });
     } else {
-      this.userService.addUser(user).subscribe(users => {
+      this.userService.addUser(user).subscribe((users) => {
         this.users = users;
         this.resetForm();
       });
@@ -46,12 +50,11 @@ export class UserManagement {
   }
 
   deleteUser(id: number) {
-    this.userService.deleteUser(id).subscribe(users => this.users = users);
+    this.userService.deleteUser(id).subscribe((users) => (this.users = users));
   }
 
   resetForm() {
-    this.currentUser = { id: 0, name: '', email: '', role: '',gender: '' };
+    this.currentUser = { id: 0, name: '', email: '', role: '', gender: '' };
     this.isEdit = false;
   }
 }
-
